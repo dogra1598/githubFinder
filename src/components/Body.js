@@ -13,7 +13,7 @@ const Body = () => {
   return (
     <React.Fragment>
       <Search onUserData={onUserData} />
-      <GitUser userData={userData} />
+      {userData && <GitUser userData={userData} />}
     </React.Fragment>
   );
 };

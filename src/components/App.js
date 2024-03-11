@@ -3,7 +3,7 @@ import Body from "./Body";
 
 const App = () => {
   return (
-    <div className="bg-neutral-200 w-screen h-screen">
+    <div>
       <Header />
       <Body />
     </div>
