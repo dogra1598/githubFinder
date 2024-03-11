@@ -23,30 +23,30 @@ const GitUser = ({ userData }) => {
         <div className="w-2/5 sm:w-1/4 rounded-full overflow-hidden mr-5">
           <img src={avatar_url} alt="user avatar" />
         </div>
-        <div className="text-lg sm:text-2xl text-[#31363f]">
-          <p className="font-bold">
-            Git handle:{" "}
+        <div className="text-lg sm:text-xl text-[#31363f]">
+          <p className="font-medium">
+            Github handle:{" "}
             <span className="font-normal italic text-neutral-600">{login}</span>
           </p>
-          <p className="font-bold">
+          <p className="font-medium">
             Name:{" "}
             <span className="font-normal italic text-neutral-600">{name}</span>
           </p>
           {email && (
-            <p className="font-bold">
+            <p className="font-medium">
               Email:{" "}
               <span className="font-normal italic text-neutral-600">
                 {email}
               </span>
             </p>
           )}
-          <p className="font-bold">
+          <p className="font-medium">
             Followers:{" "}
             <span className="font-normal italic text-neutral-600">
               {followers}
             </span>
           </p>
-          <p className="font-bold">
+          <p className="font-medium">
             Following:{" "}
             <span className="font-normal italic text-neutral-600">
               {following}
@@ -54,7 +54,7 @@ const GitUser = ({ userData }) => {
           </p>
         </div>
       </div>
-      <h1 className="mt-5 mb-3 text-2xl text-[#31363f] font-semibold">
+      <h1 className="mt-5 mb-3 text-2xl text-[#31363f] font-medium">
         Github Repos
       </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-8 mb-5">
