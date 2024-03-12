@@ -8,15 +8,16 @@ const Search = ({ onUserData }) => {
   // implemented delayed search to improve api call
   // calling api after user has stopped typing for atleast 500 milliseconds
   useEffect(() => {
-    if (username) {
-      const timeoutId = setTimeout(async () => {
-        const response = await fetch(GIT_USER_URL + username);
-        const data = await response.json();
-        onUserData(data);
-      }, 500);
+    const timeoutId = setTimeout(async () => {
+      const response = await fetch(GIT_USER_URL + username);
+      let data = await response.json();
+      if ("message" in data && data.message === "Not Found") {
+        data = {};
+      }
+      onUserData(data);
+    }, 500);
 
-      return () => clearTimeout(timeoutId);
-    }
+    return () => clearTimeout(timeoutId);
   }, [username]);
 
   return (

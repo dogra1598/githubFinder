@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 import GitUser from "./GitUser";
 import Search from "./Search";
+import NoResults from "./NoResults";
 
 const Body = () => {
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState({});
 
   const onUserData = (data) => {
     setUserData(data);
@@ -13,7 +14,11 @@ const Body = () => {
   return (
     <React.Fragment>
       <Search onUserData={onUserData} />
-      {userData && <GitUser userData={userData} />}
+      {Object.keys(userData).length > 0 ? (
+        <GitUser userData={userData} />
+      ) : (
+        <NoResults />
+      )}
     </React.Fragment>
   );
 };
